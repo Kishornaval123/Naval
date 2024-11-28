@@ -7,174 +7,184 @@
 
     <title>Resume</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+    * {
+        padding: 0;
+        margin: 0;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        nav {
-            background-color: white;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-        }
+    nav {
+        background-color: white;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        nav ul {
-            width: 100%;
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+    nav ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
 
-        nav li {
-            height: 50px;
-        }
+    nav li {
+        height: 50px;
+    }
 
-        nav a {
-            height: 100%;
-            padding: 0 30px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            color: black;
-        }
+    nav a {
+        height: 100%;
+        padding: 0 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
 
-        nav a:hover {
-            background-color: #0f0f0f;
+    nav a:hover {
+        background-color: #0f0f0f;
+        color: white;
+    }
 
-        }
+    nav li:first-child {
+        margin-right: auto;
+    }
 
-        nav li:first-child {
-            margin-right: auto;
-        }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: -20px;
+    }
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            width: 250px;
-            z-index: 999;
-            background-color: rgba(255, 255, 255, 0.411);
-            backdrop-filter: blur(10px);
-            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    .sidebar li {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sidebar a {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    /* Responsive adjustments for tablets and smaller screens */
+    @media (max-width: 800px) {
+        .hideOnMobile {
             display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-
-        .sidebar li {
-            width: 100%;
-        }
-
-        .sidebar a {
-            width: 100%;
         }
 
         .menu-button {
-            display: none;
+            display: block;
         }
 
-        @media(max-width: 800px) {
-            .hideOnMobile {
-                display: none;
-            }
-
-            .menu-button {
-                display: block;
-            }
+        nav ul {
+            justify-content: space-between;
         }
 
-        @media(max-width: 400px) {
-            .sidebar {
-                width: 100%;
-            }
+        nav a {
+            padding: 0 15px;
         }
+    }
 
-        .hero {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50vh;
-            /* Full viewport height */
-            background-image: url('https://media.istockphoto.com/id/1359108560/photo/resumes-on-laptop-with-glasses-resume-review-job-interview.jpg?s=612x612&w=0&k=20&c=if4zqnVhIDnMHXnpxG5WSWDMXihPADhTO209AW20ORE=');
-            /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        /* Dark overlay for shading */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            /* Adjust opacity as needed */
-        }
-
-
-        /* Styling the Resume section */
-        .resume-section {
-            padding: 10px;
-            background-color: #f9f9f9;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        .resume-section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .resume-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Embed Resume and Video containers */
-        .resume-pdf,
-        .video-resume {
+    @media (max-width: 400px) {
+        .sidebar {
             width: 100%;
-            max-width: 1100px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Button styling */
-        .download-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #0073e6;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
+        nav a {
+            padding: 0 10px;
         }
+    }
 
-        .download-btn:hover {
-            background-color: #005bb5;
-        }
+    .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40vh; /* Adjusted for smaller screens */
+        background-image: url('https://media.istockphoto.com/id/1359108560/photo/resumes-on-laptop-with-glasses-resume-review-job-interview.jpg?s=612x612&w=0&k=20&c=if4zqnVhIDnMHXnpxG5WSWDMXihPADhTO209AW20ORE=');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .resume-section {
+        padding: 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .resume-section h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .resume-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .resume-pdf,
+    .video-resume {
+        width: 100%;
+        max-width: 900px; /* Adjusted max width */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0073e6;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+        background-color: #005bb5;
+    }
+
+
     </style>
 </head>
 
@@ -186,15 +196,15 @@
                         <path
                             d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg></a></li>
-            <li><a href="navbar.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="Projects.html">Projects</a></li>
             <li><a href="Blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <ul>
-            <li><a href="navbar.html">PORTFOLIO</a></li>
-            <li class="hideOnMobile"><a href="navbar.html">Home</a></li>
+            <li><a href="index.html">PORTFOLIO</a></li>
+            <li class="hideOnMobile"><a href="index.html">Home</a></li>
             <li class="hideOnMobile"><a href="resume.html">Resume</a></li>
             <li class="hideOnMobile"><a href="Projects.html">Projects</a></li>
             <li class="hideOnMobile"><a href="Blogs.html">Blogs</a></li>

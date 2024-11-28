@@ -4,8 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=styles.css>
-    <title>Portfolio Website</title>
+
+    <title>Projects</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav li {
+            height: 50px;
+        }
+
+        nav a {
+            height: 100%;
+            padding: 0 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+
+        nav a:hover {
+            background-color: #0f0f0f;
+
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.411);
+            backdrop-filter: blur(10px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .sidebar li {
+            width: 100%;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        @media(max-width: 800px) {
+            .hideOnMobile {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
+
+        @media(max-width: 400px) {
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            /* Full viewport height */
+            background-image: url('https://media.istockphoto.com/id/1480239219/photo/an-analyst-uses-a-computer-and-dashboard-for-data-business-analysis-and-data-management.jpg?s=612x612&w=0&k=20&c=URv6HYZ8L3NCQnxT8-ITvInMW7mlsTE6EjnXHaqF-H4=');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Dark overlay for shading */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* Adjust opacity as needed */
+        }
+
+        .intro-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #ffffff;
+        }
+
+        .photo img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #007acc;
+        }
+
+        .intro-text {
+            max-width: 600px;
+            margin-left: 30px;
+        }
+
+        .intro-text h1 {
+            font-size: 2.5em;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .intro-text p {
+            font-size: 1.2em;
+            color: #555555;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 800px) {
+            .intro-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .photo img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+
+            .intro-text {
+                margin-left: 0;
+            }
+
+            .intro-text h1 {
+                font-size: 2em;
+            }
+
+            .intro-text p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+        }
+
+
+        .keyword-section {
+            padding: 50px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .keyword-section h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .keywords span {
+            display: inline-block;
+            background-color: #007acc;
+            color: white;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .keywords span:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .keyword-section h2 {
+                font-size: 1.5em;
+            }
+
+            .keywords span {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,15 +242,15 @@
                         <path
                             d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg></a></li>
-            <li><a href="navbar.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="Projects.html">Projects</a></li>
             <li><a href="Blogs.html">Blogs</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <ul>
-            <li><a href="navbar.html">PORTFOLIO</a></li>
-            <li class="hideOnMobile"><a href="navbar.html">Home</a></li>
+            <li><a href="index.html">PORTFOLIO</a></li>
+            <li class="hideOnMobile"><a href="index.html">Home</a></li>
             <li class="hideOnMobile"><a href="resume.html">Resume</a></li>
             <li class="hideOnMobile"><a href="Projects.html">Projects</a></li>
             <li class="hideOnMobile"><a href="Blogs.html">Blogs</a></li>
@@ -40,42 +266,35 @@
     <section class="hero">
     </section>
 
-
-    <section class="profile-section">
-        <!-- Left half - Profile Image -->
-        <div class="profile-image"></div>
-
-        <!-- Right half - Intro Text -->
+    <section class="intro-section">
+        <div class="photo">
+            <img src="Naval_Profile_Pic.jpeg" alt="Your Photo">
+        </div>
         <div class="intro-text">
-            <div>
-                <h2>About Me</h2>
-                <p>
-                    Hello! I’m Naval Kishor, a passionate Data Analyst/Business Analyst with experience in Spreadsheets,
-                    Structured Query Language, Python and their frameworks like Pandas, Numpy & Matplotlib and
-                    experience in Power BI and Tableau two best Business Intelligence tools. I enjoy creating impactful
-                    solutions and am always eager to learn new things and take on new challenges. Let’s connect and
-                    explore opportunities to collaborate!
-                </p>
-            </div>
+            <h1>Hi, I'm [Your Name]</h1>
+            <p>I am a passionate Data Analyst with expertise in Python, SQL, Power BI, Tableau, and more. I specialize
+                in analyzing trends, creating impactful visualizations, and deriving actionable insights to solve
+                real-world problems.</p>
+            <p>Let's collaborate to turn data into powerful decisions!</p>
         </div>
     </section>
-
-    <section class="keywords-section">
-        <h2>Keywords that Define Me</h2>
+    <section class="keyword-section">
+        <h2>Key Skills & Expertise</h2>
         <div class="keywords">
-            <div class="keyword">Data Analyst</div>
-            <div class="keyword">Problem Solver</div>
-            <div class="keyword">Creative Thinker</div>
-            <div class="keyword">Team Player</div>
-            <div class="keyword">Detail-Oriented</div>
-            <div class="keyword">SQL & Python Expert</div>
-            <div class="keyword">Power BI Enthusiast</div>
-            <div class="keyword">Lifelong Learner</div>
-            <div class="keyword">Analytical Mind</div>
-            <div class="keyword">Business Insight</div>
+            <span>Data Analysis</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Power BI</span>
+            <span>Tableau</span>
+            <span>Data Visualization</span>
+            <span>Business Intelligence</span>
+            <span>Data Cleaning</span>
+            <span>Statistics</span>
+            <span>Machine Learning Basics</span>
+            <span>Problem Solving</span>
+            <span>Trend Analysis</span>
         </div>
     </section>
-
 
 
 </body>
