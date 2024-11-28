@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=styles.css>
+    <title>Portfolio Website</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
+            <li><a href="navbar.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="navbar.html">PORTFOLIO</a></li>
+            <li class="hideOnMobile"><a href="navbar.html">Home</a></li>
+            <li class="hideOnMobile"><a href="resume.html">Resume</a></li>
+            <li class="hideOnMobile"><a href="Projects.html">Projects</a></li>
+            <li class="hideOnMobile"><a href="Blogs.html">Blogs</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+        </ul>
+    </nav>
+
+
+    <section class="hero">
+    </section>
+
+
+    <section class="profile-section">
+        <!-- Left half - Profile Image -->
+        <div class="profile-image"></div>
+
+        <!-- Right half - Intro Text -->
+        <div class="intro-text">
+            <div>
+                <h2>About Me</h2>
+                <p>
+                    Hello! I’m Naval Kishor, a passionate Data Analyst/Business Analyst with experience in Spreadsheets,
+                    Structured Query Language, Python and their frameworks like Pandas, Numpy & Matplotlib and
+                    experience in Power BI and Tableau two best Business Intelligence tools. I enjoy creating impactful
+                    solutions and am always eager to learn new things and take on new challenges. Let’s connect and
+                    explore opportunities to collaborate!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="keywords-section">
+        <h2>Keywords that Define Me</h2>
+        <div class="keywords">
+            <div class="keyword">Data Analyst</div>
+            <div class="keyword">Problem Solver</div>
+            <div class="keyword">Creative Thinker</div>
+            <div class="keyword">Team Player</div>
+            <div class="keyword">Detail-Oriented</div>
+            <div class="keyword">SQL & Python Expert</div>
+            <div class="keyword">Power BI Enthusiast</div>
+            <div class="keyword">Lifelong Learner</div>
+            <div class="keyword">Analytical Mind</div>
+            <div class="keyword">Business Insight</div>
+        </div>
+    </section>
+
+
+
+</body>
+<script>
+    function showSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+    }
+    function hideSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+
+    }
+</script>
+
+</html>
